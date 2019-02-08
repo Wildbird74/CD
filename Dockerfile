@@ -1,4 +1,6 @@
-FROM python:3.7
-COPY . .
+FROM alpine:3.1
+RUN apk add --update python py-pip
 RUN pip install -r requirements.txt
-CMD ["python", "./my_script.py"]
+COPY simpleapp.py /src/simpleapp.py
+EXPOSE 8000
+CMD ["python", "/src/simpleapp.py", "-p 8000"]

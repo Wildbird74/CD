@@ -1,1 +1,1 @@
-selenium
+Flask>=0.9
